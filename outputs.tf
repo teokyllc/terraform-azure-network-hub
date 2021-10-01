@@ -28,6 +28,11 @@ output "default_subnet_id" {
   description = "Azure subnet id for the default subnet."
 }
 
+output "default_subnet_name" {
+  value = azurerm_subnet.default_subnet.name
+  description = "Azure subnet name for the default subnet."
+}
+
 output "gateway_subnet_id" {
   value = azurerm_subnet.gateway_subnet.id
   description = "Azure subnet id for the VPN subnet."
