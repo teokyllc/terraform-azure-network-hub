@@ -12,6 +12,7 @@ resource "azurerm_virtual_network" "virtual_network" {
   address_space = [var.vnet_cidr]
   location      = var.region
   resource_group_name = azurerm_resource_group.network_rg.name
+  dns_servers = var.dns_servers
 
   tags = {
     environment = var.environment_tag
