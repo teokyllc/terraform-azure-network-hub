@@ -10,6 +10,11 @@ variable "vnet_cidr" {
     description = "The CIDR address for the Azure VNET."
 }
 
+variable "vnet_cidr" {
+    default = ["192.168.3.2"]
+    description = "A list of DNS servers for the VNET."
+}
+
 variable "region" {
     type = string
     default = "EastUS"
