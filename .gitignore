@@ -1,0 +1,6 @@
+.terraform
+.terraform*
+.terraform.lock*
+terraform.tfstate*
+Tests/go.*
+*.tfvars

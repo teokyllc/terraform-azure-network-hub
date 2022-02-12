@@ -1,9 +1,9 @@
-output "network_rg_id" {
+output "hub_rg_id" {
   value = azurerm_resource_group.network_rg.id
   description = "Azure Resource Group id for network resources."
 }
 
-output "network_rg_name" {
+output "hub_rg_name" {
   value = azurerm_resource_group.network_rg.name
   description = "Azure Resource Group name for network resources."
 }
@@ -34,24 +34,31 @@ output "default_subnet_name" {
 }
 
 output "gateway_subnet_id" {
-  value = azurerm_subnet.gateway_subnet.id
-  description = "Azure subnet id for the VPN subnet."
+  value = azurerm_subnet.gateway_subnet[*].id
+  description = "Azure subnet id for the gateway subnet."
 }
 
 output "ptp_vpn_local_gw_id" {
   value = azurerm_local_network_gateway.ptp_vpn_local_gw[*].id
   description = "Azure Local Gateway id for VPN."
-  depends_on = [azurerm_local_network_gateway.ptp_vpn_local_gw]
 }
 
 output "ptp_vpn_virtual_gw_id" {
   value = azurerm_virtual_network_gateway.virtual_network_gateway[*].id
-  description = "Azure Virtual Netowrk Gateway id for VPN."
-  depends_on = [azurerm_virtual_network_gateway.virtual_network_gateway]
+  description = "Azure Virtual Netowrk Gateway id."
+}
+
+output "nsg_id" {
+  value = azurerm_network_security_group.vnet_nsg[*].id
+  description = "The Network Security Group ID."
+}
+
+output "firewall_id" {
+  value = azurerm_firewall.vnet_firewall[*].id
+  description = "The Azure Firewall ID."
 }
 
 output "ptp_vpn_virtual_gw_ip" {
   value = azurerm_public_ip.virtual_network_gateway_public_ip[*].ip_address
-  description = "Azure Virtual Netowrk Gateway ip for VPN."
-  depends_on = [azurerm_virtual_network_gateway.virtual_network_gateway]
+  description = "Azure Virtual Netowrk Gateway IP."
 }
