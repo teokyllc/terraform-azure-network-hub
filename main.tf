@@ -21,7 +21,7 @@ resource "azurerm_public_ip" "virtual_network_gateway_public_ip" {
   name                = "${var.hub_vnet_name}-VGW-IP"
   location            = var.region
   resource_group_name = azurerm_resource_group.network_rg.name
-  allocation_method   = "Static"
+  allocation_method   = "Dynamic"
 
   tags = {
     environment = var.environment_tag
