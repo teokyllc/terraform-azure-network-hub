@@ -5,7 +5,8 @@ Terraform module to build a hub network layer as part of a hub and spoke network
 Simple example<br>
 <pre>
 module "network-hub" {
-    source                        = "github.com/teokyllc/terraform-azure-network-hub"
+    source                        = "app.terraform.io/ANET/network-hub/azure"
+    version                       = "1.0.1"
     environment_tag               = "MGMT"
     region                        = "EastUS"
     hub_rg_name                   = "Hub-RG"
@@ -26,7 +27,8 @@ module "network-hub" {
 With Point to Point VPN<br>
 <pre>
 module "network-hub" {
-    source                        = "github.com/teokyllc/terraform-azure-network-hub"
+    source                        = "app.terraform.io/ANET/network-hub/azure"
+    version                       = "1.0.1"
     environment_tag               = "MGMT"
     region                        = "EastUS"
     hub_rg_name                   = "Hub-RG"
