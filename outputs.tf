@@ -1,13 +1,3 @@
-output "hub_rg_id" {
-  value = azurerm_resource_group.network_rg.id
-  description = "Azure Resource Group id for network resources."
-}
-
-output "hub_rg_name" {
-  value = azurerm_resource_group.network_rg.name
-  description = "Azure Resource Group name for network resources."
-}
-
 output "virtual_network_id" {
   value = azurerm_virtual_network.virtual_network.id
   description = "Azure VNET id for network resources."
