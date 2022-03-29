@@ -36,6 +36,7 @@ resource "azurerm_firewall" "vnet_firewall" {
   location            = var.region
   resource_group_name = var.hub_rg_name
   sku_name            = "AZFW_VNet"
+  sku_tier            = "Standard"
 
   ip_configuration {
     name                 = "configuration"
