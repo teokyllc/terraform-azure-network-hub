@@ -35,6 +35,7 @@ resource "azurerm_firewall" "vnet_firewall" {
   name                = "${var.hub_vnet_name}-Firewall"
   location            = var.region
   resource_group_name = var.hub_rg_name
+  sku_name            = "AZFW_VNet"
 
   ip_configuration {
     name                 = "configuration"
